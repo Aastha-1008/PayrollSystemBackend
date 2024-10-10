@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.time.LocalDateTime;
 
 @Table
 @Entity
@@ -14,18 +14,17 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class State {
-
+public class EmpWorkingHoursLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    private Country country;
+    private Employee employee;
 
-    @OneToMany(mappedBy = "state", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<City> city;
+    @Column(name = "startDateTime", nullable = false)
+    private LocalDateTime startDateTime;
+
+    @Column(name = "endDateTime", nullable = false)
+    private LocalDateTime endDateTime;
 }
