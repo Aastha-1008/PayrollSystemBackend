@@ -33,6 +33,9 @@ public class Employee {
     @Column(name = "email" , nullable = false)
     private String email;
 
+    @Column(name = "phone" , nullable = false)
+    private String phone;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Gender gender;
 
