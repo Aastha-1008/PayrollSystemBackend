@@ -1,5 +1,6 @@
 package com.project.Payroll.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,5 +22,6 @@ public class Job {
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Department department;
 }

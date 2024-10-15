@@ -15,8 +15,9 @@ public class JobController {
     @Autowired
     private JobService jobService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/{departmentId}")
     public List<Job> fetchAllJob(@PathVariable Long departmentId ){
+        System.out.println(departmentId);
         return jobService.fetchAllJobForDepartmentId(departmentId);
     }
 
