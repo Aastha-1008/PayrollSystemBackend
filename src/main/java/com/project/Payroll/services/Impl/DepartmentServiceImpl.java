@@ -32,6 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public void addDepartment(DepartmentDetails departmentDetails){
         Department d = new Department();
         d.setName(departmentDetails.getName());
+        System.out.println(departmentDetails.getJobs());
 
         List<Job> jobs = new ArrayList<>();
 
@@ -40,6 +41,7 @@ public class DepartmentServiceImpl implements DepartmentService {
             Job j = new Job();
             j.setTitle(s);
             j.setDepartment(d);
+            jobs.add(j);
         }
         d.setJob(jobs);
         departmentRepository.save(d);
