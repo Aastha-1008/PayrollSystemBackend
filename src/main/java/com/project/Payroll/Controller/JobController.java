@@ -22,8 +22,8 @@ public class JobController {
     }
 
     @PostMapping("/{id}/{name}")
-    public void addJobToDepartment(@PathVariable Long departmentId , @PathVariable String name){
-        jobService.addJobToDepartment(departmentId , name);
+    public void addJobToDepartment(@PathVariable Long id , @PathVariable String name){
+        jobService.addJobToDepartment(id , name);
     }
 
 }

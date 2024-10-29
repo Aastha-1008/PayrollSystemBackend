@@ -16,7 +16,7 @@ public interface JobRepository extends JpaRepository<Job,Long> {
 
 
     @Query(
-            value = "select * from job where department_id = :departmentId , title = :name",
+            value = "select * from job where department_id = :departmentId and title = :name",
             nativeQuery = true
     )
     public Job isjobExistForDepartment(Long departmentId , String name);
